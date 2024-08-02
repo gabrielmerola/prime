@@ -9,7 +9,7 @@ import { RegisterRoutes } from './routes/RegisterRoutes.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/prime'>
       {/* Rotas Principais */}
       <UserRoutes />
       {/* Rotas de Registro */}
