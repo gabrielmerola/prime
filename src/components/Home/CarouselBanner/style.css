@@ -1,0 +1,18 @@
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.carousel-indicators .p-carousel-indicator {
+    background-color: #fd9d04;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+.carousel-indicators .p-carousel-indicator-active {
+    background-color: #ffba4b;
+}
