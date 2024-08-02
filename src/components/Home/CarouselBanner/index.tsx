@@ -13,7 +13,7 @@ export function CarouselBanner() {
 
     return (
         <section className='relative'>
-            <Carousel circular autoplayInterval={6000} value={imagesList} numVisible={1} numScroll={2} itemTemplate={(image: {image: string}) => {
+            <Carousel circular autoplayInterval={3000} value={imagesList} numVisible={1} numScroll={2} itemTemplate={(image: {image: string}) => {
                 return (
                     <div className="bg-cover">
                         <img className="object-cover w-full h-[572px]" src={image.image}/>

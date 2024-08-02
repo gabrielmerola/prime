@@ -4,6 +4,7 @@ import { CarouselList } from "../../../components/Home/CarouselList"
 import { CarouselBanner } from "../../../components/Home/CarouselBanner"
 import imgPessoas from "../../../assets/imgpessoas.png";
 import { Button } from "../../../components/button/button";
+import { CarouselEscolas } from "../../../components/Home/CarouselEscolas";
 
 export function Home() {
   return (
@@ -48,6 +49,15 @@ export function Home() {
             <span className="text-gray-400">Estudante cadastre o seu currículo e seja procurado pelas melhoras empresas através das nossas oportunidades de estágio.</span>
             <Button href="/login">Cadastre seu currículo gratuitamente</Button>
           </div>
+        </section>
+
+        <section className="flex flex-col items-center py-4">
+          <div className="flex gap-4 w-[70%] items-center mb-8">
+            <h3 className="text-2xl text-prime-blue font-bold border-b-4 border-prime-orange max-sm:text-base">Algumas Escolas parceiras</h3>
+            <i className="fa-solid fa-graduation-cap text-4xl text-prime-orange"></i>
+          </div>
+
+          <CarouselEscolas />
         </section>
       </main>
       <Footer />
