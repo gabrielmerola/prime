@@ -27,7 +27,7 @@ export function Header({ page }:HeaderProps) {
         <header>
             <section className='flex items-center bg-gray-200'>
                 <div className='w-1/2 md:bg-white flex justify-center clip-top-right max-md:w-full'>
-                    <a href="/">
+                    <a href="/prime/">
                         <img className='h-20' src={primeLogo} alt="Logo Prime Estágios" />
                     </a>
                 </div>
