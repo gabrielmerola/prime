@@ -23,7 +23,7 @@ export function Home() {
           <CarouselList />
         </section>
 
-        <section className="flex flex-col items-center py-8">
+        {/* <section className="flex flex-col items-center py-8">
           <div className="flex gap-4 w-[70%] items-center mb-8">
             <h3 className="text-2xl text-prime-blue font-bold border-b-4 border-prime-orange max-sm:text-base">Dicas sobre carreira com a Prime!</h3>
             <i className="fa-regular fa-comment text-4xl text-prime-orange"></i>
@@ -40,7 +40,7 @@ export function Home() {
               <img className="hover:scale-125 duration-500" src="https://via.placeholder.com/500x500" alt="" />
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="flex justify-center max-lg:items-center max-lg:flex-col py-4">
           <img className="w-[30%] max-md:w-[60%] max-sm:w-full" src={imgPessoas} alt="Imagem de Estudantes" />

@@ -59,7 +59,7 @@ export function Header({ page }:HeaderProps) {
                     <li className={`relative uppercase text-sm p-4 w-40 text-center border-x-2 duration-300 hover:bg-gray-100 hover:text-prime-orange ${page == "prime" ? "text-prime-orange" : ""}`}>
                         <Link to={"/prime"}>Sobre a Prime</Link>
                     </li>
-                    <li className={`relative uppercase text-sm p-4 w-40 text-center border-x-2 duration-300 hover:bg-gray-100 hover:text-prime-orange ${page == "dicas" ? "text-prime-orange" : ""}`}>
+                    <li className={`relative uppercase text-sm p-4 w-40 text-center border-r-2 duration-300 hover:bg-gray-100 hover:text-prime-orange ${page == "dicas" ? "text-prime-orange" : ""}`}>
                         <Link to={"/dicas"}>Dicas</Link>
                     </li>
                     <li onMouseEnter={()=>setOpenEmpresa(true)} onMouseLeave={()=>setOpenEmpresa(false)} className='relative p-4 w-40 text-center border-r-2 hover:bg-gray-100'>
