@@ -26,7 +26,7 @@ export function Header({ page }:HeaderProps) {
     return (
         <header>
             <section className='flex items-center bg-gray-200'>
-                <div className='w-1/2 md:bg-white flex justify-center clip-top-right max-md:w-full'>
+                <div className='w-1/2 md:bg-white flex justify-center clip-top-right p-4 max-md:w-full'>
                     <a href="/prime/">
                         <img className='h-20' src={primeLogo} alt="Logo Prime Estágios" />
                     </a>
@@ -34,16 +34,16 @@ export function Header({ page }:HeaderProps) {
                 <div className='w-1/2 flex justify-center items-center max-md:justify-end max-md:p-4'>
                     <div className='flex items-center gap-4 max-md:hidden'>
                         <a href="https://www.linkedin.com/company/prime-estágios">
-                            <i className='pi pi-linkedin text-4xl duration-300 hover:text-[2.75rem] text-blue-500'></i>
+                            <i className='pi pi-linkedin text-2xl duration-300 hover:text-[1.75rem] text-blue-500'></i>
                         </a>
                         <a href="https://web.facebook.com/primestagios">
-                            <i className='pi pi-facebook text-blue-500 text-4xl duration-300 hover:text-[2.75rem]'></i>
+                            <i className='pi pi-facebook text-blue-500 text-2xl duration-300 hover:text-[1.75rem]'></i>
                         </a>
                         <a href="https://www.instagram.com/primeestagios_">
-                            <i className='pi pi-instagram text-4xl duration-300 hover:text-[2.75rem] bg-gradient-to-tl from-purple-500 to-orange-500 inline-block text-transparent bg-clip-text'></i>
+                            <i className='pi pi-instagram text-2xl duration-300 hover:text-[1.75rem] bg-gradient-to-tl from-purple-500 to-orange-500 inline-block text-transparent bg-clip-text'></i>
                         </a>
                         <a className='text-sm font-bold hover:underline' href="https://api.whatsapp.com/send/?phone=5511974446610&text=Olá%2C+entrei+pelo+site+Prime+Estágios&type=phone_number&app_absent=0">
-                            <i className='pi pi-whatsapp text-4xl text-green-500 duration-300 hover:text-[2.75rem]'></i>
+                            <i className='pi pi-whatsapp text-2xl text-green-500 duration-300 hover:text-[1.75rem]'></i>
                         </a>
                         <Link className='text-sm font-bold duration-200 bg-white hover:text-white hover:bg-prime-orange p-2 rounded-xl' to={"/login"}><i className='pi pi-sign-in'></i> Iniciar Sessão</Link>
                     </div>
@@ -97,7 +97,7 @@ export function Header({ page }:HeaderProps) {
 
             {/* MOBILE */}
             <nav className={`absolute justify-end top-0 right-0 z-20 bg-[rgba(0,0,0,.3)] w-full h-screen overflow-hidden ${openNav ? "flex" : "hidden"}`}>
-                <ul className={`h-screen bg-white w-1/2 flex flex-col items-center ${animateNav ? "slide-in" : "slide-out"}`}>
+                <ul className={`h-screen bg-white w-2/3 flex flex-col items-center ${animateNav ? "slide-in" : "slide-out"}`}>
                     <li className='flex justify-end w-full p-4'>
                         <i onClick={handleCloseNav} className='pi pi-times text-xl bg-prime-orange p-2 text-white'></i>
                     </li>

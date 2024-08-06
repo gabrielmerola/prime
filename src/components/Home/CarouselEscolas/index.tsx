@@ -62,8 +62,8 @@ export function CarouselEscolas() {
             numScroll={1}
             itemTemplate={(item: any) => {
             return (
-                <div className="p-4 flex justify-center">
-                    <img className="h-44 w-44 rounded-md shadow-xl object-center hover:transform hover:scale-110 hover:transition-transform duration-700" src={item} alt={''} />
+                <div className="mb-8 p-4 flex justify-center">
+                    <img className="h-44 w-44 rounded-md shadow-xl object-contain bg-white hover:transform hover:scale-110 hover:transition-transform duration-700" src={item} alt="imagem da escola" />
                 </div>
             );
             }}
