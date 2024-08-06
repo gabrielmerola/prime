@@ -42,7 +42,7 @@ export function Header({ page }:HeaderProps) {
                         <a href="https://www.instagram.com/primeestagios_">
                             <i className='pi pi-instagram text-2xl duration-300 hover:text-[1.75rem] bg-gradient-to-tl from-purple-500 to-orange-500 inline-block text-transparent bg-clip-text'></i>
                         </a>
-                        <a className='text-sm font-bold hover:underline' href="https://api.whatsapp.com/send/?phone=5511974446610&text=Olá%2C+entrei+pelo+site+Prime+Estágios&type=phone_number&app_absent=0">
+                        <a className='text-sm font-bold mr-4 hover:underline' href="https://api.whatsapp.com/send/?phone=5511974446610&text=Olá%2C+entrei+pelo+site+Prime+Estágios&type=phone_number&app_absent=0">
                             <i className='pi pi-whatsapp text-2xl text-green-500 duration-300 hover:text-[1.75rem]'></i>
                         </a>
                         <Link className='text-sm font-bold duration-200 bg-white hover:text-white hover:bg-prime-orange p-2 rounded-xl' to={"/login"}><i className='pi pi-sign-in'></i> Iniciar Sessão</Link>

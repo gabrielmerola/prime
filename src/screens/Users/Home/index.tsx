@@ -16,7 +16,7 @@ export function Home() {
 
         <section className="flex flex-col items-center py-4">
           <div className="flex gap-4 w-[70%] items-center mb-8">
-            <h3 className="text-2xl text-prime-blue font-bold border-b-4 border-prime-orange max-sm:text-base">Confira as Vagas em Destaque</h3>
+            <h3 className="text-3xl text-prime-blue font-bold border-b-4 border-prime-orange max-sm:text-base">Confira as Vagas em Destaque</h3>
             <i className="fa-regular fa-newspaper text-4xl text-prime-orange"></i>
           </div>
 
@@ -42,22 +42,23 @@ export function Home() {
           </div>
         </section> */}
 
-        <section className="flex justify-center max-lg:items-center max-lg:flex-col py-4">
-          <img className="w-[30%] max-md:w-[60%] max-sm:w-full" src={imgPessoas} alt="Imagem de Estudantes" />
-          <div className="flex flex-col gap-8 items-start w-1/3 max-lg:w-full">
-            <h3 className="text-prime-blue font-bold text-5xl">Estudantes</h3>
-            <span className="text-gray-400">Estudante cadastre o seu currículo e seja procurado pelas melhoras empresas através das nossas oportunidades de estágio.</span>
-            <Button href="/login">Cadastre seu currículo gratuitamente</Button>
-          </div>
-        </section>
-
         <section className="flex flex-col items-center py-4">
           <div className="flex gap-4 w-[70%] items-center mb-8">
-            <h3 className="text-2xl text-prime-blue font-bold border-b-4 border-prime-orange max-sm:text-base">Algumas Escolas parceiras</h3>
+            <h3 className="text-3xl text-prime-blue font-bold border-b-4 border-prime-orange max-sm:text-base">Algumas Escolas parceiras</h3>
             <i className="fa-solid fa-graduation-cap text-4xl text-prime-orange"></i>
           </div>
 
           <CarouselEscolas />
+        </section>
+
+        <section className="flex justify-center max-lg:items-center max-lg:flex-col py-4">
+          <img className="w-[30%] max-md:w-[60%] max-sm:w-full" src={imgPessoas} alt="Imagem de Estudantes" />
+          <div className="flex flex-col gap-8 items-start w-1/3 max-lg:w-full">
+            <h3 className="text-prime-blue font-bold text-5xl">Estudante</h3>
+            <span className="text-gray-400">Você é estudante e está em busca de uma oportunidade de estágio que faça a diferença no seu desenvolvimento profissional? Então, você está no lugar certo!
+            A Prime Estágios conecta você às  vagas de estágio que porporcionam experiências reais e crescimento profissional.</span>
+            <Button href="/login">Cadastre seu currículo gratuitamente</Button>
+          </div>
         </section>
       </main>
       <Footer />
