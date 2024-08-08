@@ -131,10 +131,10 @@ export function Header({ page }:HeaderProps) {
                         <Link className='text-center text-sm border-b-2 border-white p-2 duration-200 hover:text-prime-orange' to={"/login"}>Cadastre-se</Link>
                     </div>
                     <li className='relative uppercase text-sm p-4 w-52 text-center duration-300 hover:text-prime-orange'>
-                        <Link className='text-center' to={"/prime"}>Instituições de Ensino</Link>
+                        <Link className='text-center' to={"/ie"}>Instituições de Ensino</Link>
                     </li>
                     <li className='relative uppercase text-sm p-4 w-40 text-center duration-300 hover:text-prime-orange'>
-                        <Link to={"/dicas"}>Fale Conosco</Link>
+                        <Link to={"/contato"}>Fale Conosco</Link>
                     </li>
                 </ul>
             </nav>
