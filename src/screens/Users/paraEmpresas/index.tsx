@@ -13,10 +13,10 @@ export function ParaEmpresas() {
         <main>
             <section className="w-full h-72 overflow-hidden relative">
                 <img className="w-full h-full object-cover object-center" src={fundoEmpresas} alt="Banner" />
-                <div className="absolute z-10 inset-y-10 flex justify-center items-center">
-                    <img className="w-52 max-md:w-32" src={topico1} alt="" />
-                    <img className="w-52 max-md:w-32" src={topico2} alt="" />
-                    <img className="w-52 max-md:w-32" src={topico3} alt="" />
+                <div className="absolute z-[5] inset-y-10 flex justify-center items-center">
+                    <img className="w-52 max-md:w-32" src={topico1} alt="topicos empresa" />
+                    <img className="w-52 max-md:w-32" src={topico2} alt="topicos empresa" />
+                    <img className="w-52 max-md:w-32" src={topico3} alt="topicos empresa" />
                 </div>
             </section>
 

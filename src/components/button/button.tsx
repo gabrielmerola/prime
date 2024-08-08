@@ -1,4 +1,5 @@
 import { ComponentProps } from "react"
+import { Link } from "react-router-dom"
 import { tv, VariantProps } from "tailwind-variants"
 
 const button = tv({
@@ -24,11 +25,12 @@ export type ButtonProps = ComponentProps<'a'> & VariantProps<typeof button>
 
 export function Button({ color, font, ...props } : ButtonProps) {
     return (
-        <a
+        <Link
+            to={props.href!}
             className={button({ color, font })}
             {...props}
         >
             {props.children}
-        </a>
+        </Link>
     )
 }

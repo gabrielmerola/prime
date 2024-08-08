@@ -17,15 +17,14 @@ export function Header({ page }:HeaderProps) {
         setOpenNav(true);
         setAnimateNav(true);
     };
-
     const handleCloseNav = () => {
         setAnimateNav(false);
         setTimeout(() => setOpenNav(false), 300);
     };
 
     return (
-        <header>
-            <section className='flex items-center bg-gray-200'>
+        <header className='sticky top-0 z-10'>
+            <section className={`flex items-center bg-gray-200`}>
                 <div className='w-1/2 md:bg-white flex justify-center clip-top-right p-4 max-md:w-full'>
                     <a href="/prime/">
                         <img className='h-20' src={primeLogo} alt="Logo Prime Estágios" />
@@ -54,7 +53,7 @@ export function Header({ page }:HeaderProps) {
             </section>
 
             {/* WEBSITE */}
-            <nav className='border-[1px] border-b-4 border-b-prime-orange'>
+            <nav className='border-[1px] border-b-4 border-b-prime-orange bg-white'>
                 <ul className='flex justify-center items-center max-md:hidden'>
                     <li className={`relative uppercase text-sm p-4 w-40 text-center border-x-2 duration-300 hover:bg-gray-100 hover:text-prime-orange ${page == "prime" ? "text-prime-orange" : ""}`}>
                         <Link to={"/prime"}>Sobre a Prime</Link>
