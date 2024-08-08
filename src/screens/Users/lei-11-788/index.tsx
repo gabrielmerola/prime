@@ -7,10 +7,10 @@ export function Lei() {
         <Header page="lei-11-788"/>
         <main>
             <section className="bg-prime-blue p-8 text-white flex justify-center">
-                <h1 className="w-1/2 font-bold text-3xl">Lei 11.788</h1>
+                <h1 className="w-1/2 font-bold text-3xl max-md:w-full">Lei 11.788</h1>
             </section>
             <section className="flex justify-center my-4">
-                <div className="w-1/2">
+                <div className="w-1/2 max-md:w-full p-4">
                     <p><strong>Lei N. 11.788, de 25 de Setembro de 2008.</strong></p>
                     <p>&nbsp;</p>
                     <p><strong>O PRESIDENTE DA REPÚBLICA</strong> Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p>
