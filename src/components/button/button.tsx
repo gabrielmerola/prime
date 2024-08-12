@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { tv, VariantProps } from "tailwind-variants"
 
 const button = tv({
-    base: "text-white py-2 px-4 rounded-full",
+    base: "text-white py-2 px-4 rounded-full max-sm:w-full",
     variants: {
         color: {
             default: "bg-prime-orange duration-200 hover:bg-orange-500",

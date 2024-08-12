@@ -29,15 +29,15 @@ export function CarouselBanner() {
 
     return (
         <section className='relative'>
-            <Carousel circular autoplayInterval={6000} value={imagesList} numVisible={1} numScroll={1} itemTemplate={(item) => {
+            <Carousel circular autoplayInterval={3000} value={imagesList} numVisible={1} numScroll={1} itemTemplate={(item) => {
                 return (
                     <div className="relative">
                         <img className="object-cover w-full h-[572px]" src={item.image} />
-                        <div className='absolute top-0 w-full h-full flex p-8'>
-                            <div className='bg-[rgba(11,64,124,.8)] p-12 rounded-lg text-white flex flex-col justify-center gap-4'>
-                                <h1 className='font-bold text-6xl uppercase'>{item.title}</h1>
+                        <div className='absolute top-0 w-full h-full flex p-4 sm:p-8'>
+                            <div className='bg-[rgba(11,64,124,.8)] max-md:w-full p-6 sm:p-12 rounded-lg text-white flex flex-col justify-center gap-4'>
+                                <h1 className='font-bold text-2xl sm:text-6xl uppercase'>{item.title}</h1>
                                 <span>{item.subtitle}</span>
-                                <div className='flex gap-4'>
+                                <div className='flex gap-4 flex-wrap'>
                                     <Button href={item.button1Href} font='bold'>{item.button1Text}</Button>
                                     <Button href={item.button2Href} font='bold' color='blue_light'>{item.button2Text}</Button>
                                 </div>
