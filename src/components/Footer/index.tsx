@@ -3,6 +3,7 @@ import logo from '../../assets/primen.png'
 
 export function Footer(){
     return (
+        <>
         <footer className='bg-prime-blue'>
             <div className="flex items-center justify-center gap-12 p-12 max-lg:flex-col">
                 <div className='flex flex-col gap-4'>
@@ -34,5 +35,9 @@ export function Footer(){
                 <span className='text-sm text-white w-[70%]'>Endereço: R. Joana Angélica, 249-SI. 14- Bairro Barcelona - São Caetano do Sul/SP CEP 09551-050. Não são realizados qualquer tipo de atendimento pessoal em nosso escritório. Nosso atendimento é personalizado e realizado através do <i className='pi pi-whatsapp'></i> telefone/whatsapp.</span>
             </div>
         </footer>
+        <div className='flex justify-center text-[10px] p-2'>
+            <p>CNPJ 35.752.974/0001-06 © Copyright Prime Estágios (G&G recursos Humanos ltda-ME) | Todos direitos Reservados | Política de Uso e Privacidade de Dados</p>
+        </div>
+        </>
     )
 }
