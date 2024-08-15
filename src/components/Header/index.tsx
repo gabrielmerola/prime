@@ -66,7 +66,7 @@ export function Header({ page }:HeaderProps) {
                             <span className='uppercase text-sm'>Empresas</span>
                             <i className='pi pi-angle-down'></i>
                         </div>
-                        <div className={`absolute z-50 left-0 mt-4 flex-col bg-blue-300 p-4 w-52 ${openEmpresa ? "flex" : "hidden"}`}>
+                        <div className={`absolute z-50 left-0 mt-4 flex-col bg-[#c5e0ff] p-4 w-52 ${openEmpresa ? "flex" : "hidden"}`}>
                             <Link className={`text-center text-sm border-b-2 border-white p-2 duration-200 hover:text-prime-orange ${page == "para-empresas" ? "text-prime-orange" : ""}`} to={"/para-empresas"}>Diferenciais</Link>
                             <Link className={`text-center text-sm border-b-2 border-white p-2 duration-200 hover:text-prime-orange ${page == "lei-11-788" ? "text-prime-orange" : ""}`} to={"/lei-11-788"}>Legislação</Link>
                             <Link className={`text-center text-sm border-b-2 border-white p-2 duration-200 hover:text-prime-orange ${page == "orientacoes" ? "text-prime-orange" : ""}`} to={"/orientacoes"}>Orientações</Link>
@@ -112,7 +112,7 @@ export function Header({ page }:HeaderProps) {
                             <i className='pi pi-angle-down'></i>
                         </div>
                     </li>
-                    <div className={`bg-blue-300 p-4 w-full ${openEmpresa ? "flex flex-col" : "hidden"}`}>
+                    <div className={`bg-[#c5e0ff] p-4 w-full ${openEmpresa ? "flex flex-col" : "hidden"}`}>
                         <Link className='text-center text-sm border-b-2 border-white p-2 duration-200 hover:text-prime-orange' to={"/para-empresas"}>Diferenciais</Link>
                         <Link className='text-center text-sm border-b-2 border-white p-2 duration-200 hover:text-prime-orange' to={"/lei-11-788"}>Legislação</Link>
                         <Link className='text-center text-sm border-b-2 border-white p-2 duration-200 hover:text-prime-orange' to={"/orientacoes"}>Orientações</Link>
