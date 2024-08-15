@@ -40,7 +40,7 @@ export function Dicas() {
             </section>
 
             <section className="flex justify-center">
-                <div className="w-2/3 my-16 grid grid-cols-4 gap-4">
+                <div className="w-2/3 my-16 gap-4 grid grid-cols-4 max-xl:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
                     {dicas.map((item, index) => (
                         <CardDicas item={item} index={index} />
                     ))}
