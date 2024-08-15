@@ -24,9 +24,9 @@ export function ParaEmpresas() {
             <section className="w-full h-72 overflow-hidden relative">
                 <img className="w-full h-full object-cover object-center" src={fundoEmpresas} alt="Banner" />
                 <div className="absolute z-[5] inset-y-10 flex justify-center items-center">
-                    <img className="w-52 max-md:w-32" src={topico1} alt="topicos empresa" />
-                    <img className="w-52 max-md:w-32" src={topico2} alt="topicos empresa" />
-                    <img className="w-52 max-md:w-32" src={topico3} alt="topicos empresa" />
+                    <img className="w-40 max-md:w-24" src={topico1} alt="topicos empresa" />
+                    <img className="w-40 max-md:w-24" src={topico2} alt="topicos empresa" />
+                    <img className="w-40 max-md:w-24" src={topico3} alt="topicos empresa" />
                 </div>
             </section>
 
@@ -49,11 +49,11 @@ export function ParaEmpresas() {
                 </div>
             </section>
 
-            <section className="bg-gray-100 py-8">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section className="bg-gray-100">
+                <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col items-center md:flex-row sm:items-start">
                     <div className="w-full md:w-1/2 flex flex-col items-center">
-                        <div className="relative w-[60%] h-72 sm:h-auto">
+                        <div className="relative w-[70%] sm:h-auto">
                             <img
                                 src={paraEmpresasCard} 
                                 alt="Vantagens"
@@ -66,7 +66,7 @@ export function ParaEmpresas() {
                             </div>
                         </div>
                     </div>
-                    <div className="text-gray-500 w-full md:w-1/2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-8 sm:mt-0 sm:pl-8">
+                    <div className="text-gray-500 w-full md:w-1/2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:mt-0 sm:pl-8">
                         <div className="flex flex-col items-center text-center p-4">
                             <img src={icone1} alt="icone" />
                             <p>Facilidade e agilidade na abertura de vagas de estágio</p>
