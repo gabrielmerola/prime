@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './style.css'
 import { useState } from 'react';
 
@@ -11,7 +12,7 @@ export function Login() {
     };
 
     return (
-        <main className="w-full h-screen flex items-center justify-center">
+        <main id='backgroundPrime' className="w-full h-screen flex items-center justify-center">
             <section className='relative flex rounded-[64px] bg-[rgba(255,255,255,.4)] shadow-2xl w-2/3 h-2/3 overflow-hidden'>
                 <div 
                     className={`absolute flex flex-col items-center justify-evenly text-white bg-gradient-to-t z-50 to-[#01144b] to-[50%] from-[#1238a8] top-0 h-full w-1/2 rounded-[64px] duration-500 ${moveRight ? 'translate-x-0' : 'translate-x-[100%]'}`}
@@ -41,7 +42,7 @@ export function Login() {
                         </div>
                         <span className='cursor-pointer text-prime-blue font-semibold text-xl'>Esqueceu sua senha?</span>
                     </div>
-                    <button onClick={handleClick} className='w-1/2 p-4 rounded-full bg-gradient-to-l to-[#01144b] to-[50%] from-[#1238a8] text-white uppercase font-bold duration-200 hover:brightness-150'>Entrar</button>
+                    <Link to="/admin/dashboard" className='text-center w-1/2 p-4 rounded-full bg-gradient-to-l to-[#01144b] to-[50%] from-[#1238a8] text-white uppercase font-bold duration-200 hover:brightness-150'>Entrar</Link>
                 </div>
                 {/* CADASTRO */}
                 <div className='w-1/2 p-6 rounded-r-3xl'>
