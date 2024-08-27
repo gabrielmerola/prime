@@ -9,11 +9,12 @@ const button = tv({
             default: "bg-prime-orange duration-200 hover:bg-orange-500",
             blue: 'bg-prime-blue',
             blue_light: 'bg-blue-700 duration-200 hover:bg-blue-800',
+            white: 'bg-white text-prime-blue duration-200 hover:text-prime-orange',
         },
         font: {
             bold: 'font-bold',
             normal: 'font-normal'
-        } 
+        }
     },
     defaultVariants: {
         color: 'default',
