@@ -1,5 +1,5 @@
-import { Routes, Route } from 'react-router-dom'
-import { Login } from '../screens/Register/Login/login'
+import { Routes, Route } from 'react-router-dom';
+import { Login } from '../screens/Register/Login';
 
 export function RegisterRoutes() {
     return (
