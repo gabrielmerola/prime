@@ -21,9 +21,9 @@ export function Login() {
                     <div className='flex flex-col items-center gap-4 w-[50%]'>
                         <h3 className='text-xl'>Registre-se:</h3>
                         <div className='flex flex-col gap-2 w-full'>
-                            <button onClick={handleClick} className='w-full p-4 rounded-full bg-white text-prime-blue uppercase font-bold duration-200 hover:brightness-75'>Estudante</button>
-                            <button onClick={handleClick} className='w-full p-4 rounded-full bg-white text-prime-blue uppercase font-bold duration-200 hover:brightness-75'>Empresa</button>
-                            <button onClick={handleClick} className='w-full p-4 rounded-full bg-white text-prime-blue uppercase font-bold duration-200 hover:brightness-75'>Instituições de Ensino</button>
+                            <button onClick={handleClick} className='w-full p-4 rounded-full bg-white text-prime-blue uppercase font-bold duration-200 hover:bg-prime-orange hover:text-white'>Estudante</button>
+                            <button onClick={handleClick} className='w-full p-4 rounded-full bg-white text-prime-blue uppercase font-bold duration-200 hover:bg-prime-orange hover:text-white'>Empresa</button>
+                            <button onClick={handleClick} className='w-full p-4 rounded-full bg-white text-prime-blue uppercase font-bold duration-200 hover:bg-prime-orange hover:text-white'>Instituições de Ensino</button>
                         </div>
                     </div>
                 </div>
