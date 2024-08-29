@@ -1,4 +1,10 @@
 import { useState } from "react";
+import { DashboardModule } from "../modules/DashboardModule";
+import { EstagiariosModule } from "../modules/EstagiariosModule";
+import { InstituicoesModule } from "../modules/InstituicoesModule";
+import { EmpresasModule } from "../modules/EmpresasModule";
+import { VagasModule } from "../modules/VagasModule";
+import { UsuariosModule } from "../modules/UsuariosModule";
 
 export function Dashboard() {
     const [screen, setScreen] = useState<string>('dashboard');
@@ -69,61 +75,13 @@ export function Dashboard() {
             </nav> 
             
             {/* AREA MUDA DE ACORDO COM O SCREEN */}
-            <section className="w-5/6 rounded-[48px] p-8 flex flex-col justify-center">
-                <h1 className="font-bold text-3xl mb-8 uppercase">{screen === 'estagiarios' ? level === 10 ? 'estagiários - Perfil Pessoal' : level === 25 ? 'estagiários - Perfil Escolar' : level === 50 ? 'estagiários - Perfil do Estágio' : level === 75 ? 'estagiários - Histórico de Estágio' : 'estagiários - Alterar Senha' : screen}</h1>
-                <h1>Teste de animação da barra estagiario</h1>
-                <div className="flex flex-col items-start gap-4 mt-8">
-                    <button className="bg-prime-orange text-white rounded-lg p-2" onClick={() => {
-                        setLevel(10)
-                        setScreen('estagiarios')
-                    }}>
-                        <span>Perfil Pessoal</span>
-                    </button>
-                    <button className="bg-prime-orange text-white rounded-lg p-2" onClick={() => {
-                        setLevel(25)
-                        setScreen('estagiarios')
-                    }}>
-                        <span>Perfil Escolar</span>
-                    </button>
-                    <button className="bg-prime-orange text-white rounded-lg p-2" onClick={() => {
-                        setLevel(50)
-                        setScreen('estagiarios')
-                    }}>
-                        <span>Perfil do Estágio</span>
-                    </button>
-                    <button className="bg-prime-orange text-white rounded-lg p-2" onClick={() => {
-                        setLevel(75)
-                        setScreen('estagiarios')
-                    }}>
-                        <span>histórico de Estágio</span>
-                    </button>
-                    <button className="bg-prime-orange text-white rounded-lg p-2" onClick={() => {
-                        setLevel(100)
-                        setScreen('estagiarios')
-                    }}>
-                        <span>Alterar Senha</span>
-                    </button>
-                </div>
-                <div className="grid grid-cols-2 gap-8">
-                    
-                    <div className="bg-gray-100 rounded-[24px] p-6 shadow-md">
-                        <h2 className="font-semibold text-xl mb-2">Informação 1</h2>
-                        <p>Conteúdo da caixa de informação 1</p>
-                    </div>
-                    <div className="bg-gray-100 rounded-[24px] p-6 shadow-md">
-                        <h2 className="font-semibold text-xl mb-2">Informação 2</h2>
-                        <p>Conteúdo da caixa de informação 2</p>
-                    </div>
-                    <div className="bg-gray-100 rounded-[24px] p-6 shadow-md">
-                        <h2 className="font-semibold text-xl mb-2">Informação 3</h2>
-                        <p>Conteúdo da caixa de informação 3</p>
-                    </div>
-                    <div className="bg-gray-100 rounded-[24px] p-6 shadow-md">
-                        <h2 className="font-semibold text-xl mb-2">Informação 4</h2>
-                        <p>Conteúdo da caixa de informação 4</p>
-                    </div>
-                </div>
-            </section>
+            {screen === 'dashboard' ? <DashboardModule /> : 
+            screen === 'usuarios' ? <UsuariosModule /> :
+            screen === 'estagiarios' ? <EstagiariosModule level={level} setLevel={setLevel} setScreen={setScreen} /> :
+            screen === 'instituicoes' ? <InstituicoesModule /> :
+            screen === 'empresas' ? <EmpresasModule /> :
+            screen === 'vagas' ? <VagasModule /> : null
+            }
         </main>
     )
 }
