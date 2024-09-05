@@ -35,7 +35,7 @@ export function Dashboard() {
                     {/* menu de estagiarios */}
                     <div className={`relative flex-col gap-5 ml-6 ${screen === 'estagiarios' ? 'flex' : 'hidden'}`}>
                         <div className="w-[2px] h-full bg-white absolute top-0 left-[7px]">
-                            <div className={`w-[2px] h-[${level}%] duration-300 bg-prime-orange absolute top-0`}></div>
+                            <div className={`w-[2px] duration-300 bg-prime-orange absolute top-0 ${level == 25 ? "h-[25%]" : level == 50 ? "h-1/2" : level == 75 ? "h-[75%]" : level == 100 ? "h-[100%]" : "h-[10%]"}`}></div>
                         </div>
                         <div className="flex items-center gap-2">
                             <div className="h-4 w-4 z-10 bg-prime-orange border-2 border-prime-orange rounded-full"/>
