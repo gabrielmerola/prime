@@ -563,7 +563,7 @@ export function UsuariosModule() {
                     <div className="text-center p-4">Nenhum resultado encontrado.</div>
                 )}
             </div>
-            <div className="flex justify-between gap-2 mt-4">
+            <div className="flex items-center justify-between gap-2 mt-4">
                 <span>
                     Exibindo {Math.min(currentPage * itemsPerPage, filteredData.length)} de {filteredData.length} resultados
                 </span>
