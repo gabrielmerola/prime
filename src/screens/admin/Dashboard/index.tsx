@@ -11,24 +11,25 @@ export function Dashboard() {
     const [level, setLevel] = useState<number>(10);
 
     return (
-        <main id="backgroundPrime" className="w-full h-screen p-8 flex gap-4">
-            <nav className="w-1/6 bg-gradient-to-t z-50 to-[#01144b] to-[50%] from-[#1238a8] text-white rounded-[48px] p-4">
-                <div className="flex flex-col items-center justify-center">
+        <main id="backgroundPrime" className="w-full min-h-screen p-8 flex gap-4 max-lg:flex-col">
+            <nav className="w-1/6 bg-gradient-to-t z-50 to-[#01144b] to-[50%] from-[#1238a8] text-white rounded-[48px] p-4 max-lg:w-full max-lg:flex max-lg:items-center max-lg:justify-between">
+                <div className="flex flex-col lg:items-center lg:justify-center">
                     <img className="w-1/2 rounded-full" src="http://via.placeholder.com/150" alt="" />
                 </div>
-                <div className="flex flex-col items-center justify-center mt-16 gap-4 relative">
-                    <div onClick={() => setScreen('dashboard')} className={`flex items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange z-10 ${screen === 'dashboard' ? 'text-black bg-prime-orange' : 'text-white'}`}>
+                <i className="fa-solid fa-bars text-3xl lg:hidden"></i>
+                <div className="flex flex-col items-center justify-center lg:mt-16 gap-4 relative max-lg:flex-row max-lg:hidden">
+                    <div onClick={() => setScreen('dashboard')} className={`flex items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange z-10 max-xl:flex-col ${screen === 'dashboard' ? 'text-black bg-prime-orange' : 'text-white'}`}>
                         <i className="fa-solid fa-home text-2xl w-1/4"></i>
                         <span className="text-xl">Dashboard</span>  
                     </div>
-                    <div onClick={() => setScreen('usuarios')} className={`flex items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange z-10 ${screen === 'usuarios' ? 'text-black bg-prime-orange' : 'text-white'}`}>
+                    <div onClick={() => setScreen('usuarios')} className={`flex items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange max-xl:flex-col ${screen === 'usuarios' ? 'text-black bg-prime-orange' : 'text-white'}`}>
                         <i className="fa-solid fa-user text-2xl w-1/4"></i>
                         <span className="text-xl">Usuários</span>  
                     </div>
                     <div onClick={() => {
                         setScreen('estagiarios')
                         setLevel(10)
-                    }} className={`flex items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange z-10 ${screen === 'estagiarios' ? 'text-black bg-prime-orange' : 'text-white'}`}>
+                    }} className={`flex items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange z-10 max-xl:flex-col ${screen === 'estagiarios' ? 'text-black bg-prime-orange' : 'text-white'}`}>
                         <i className="fa-solid fa-graduation-cap text-2xl w-1/4"></i>
                         <span className="text-xl">Estagiários</span>  
                     </div>
@@ -59,15 +60,15 @@ export function Dashboard() {
                         </div>
                     </div>
                     
-                    <div onClick={() => setScreen('instituicoes')} className={`flex items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange z-10 ${screen === 'instituicoes' ? 'text-black bg-prime-orange' : 'text-white'}`}>
+                    <div onClick={() => setScreen('instituicoes')} className={`flex items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange z-10 max-xl:flex-col ${screen === 'instituicoes' ? 'text-black bg-prime-orange' : 'text-white'}`}>
                         <i className="fa-solid fa-landmark text-2xl w-1/4"></i>
                         <span className="text-xl">Instituições</span>  
                     </div>
-                    <div onClick={() => setScreen('empresas')} className={`flex items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange z-10 ${screen === 'empresas' ? 'text-black bg-prime-orange' : 'text-white'}`}>
+                    <div onClick={() => setScreen('empresas')} className={`flex items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange z-10 max-xl:flex-col ${screen === 'empresas' ? 'text-black bg-prime-orange' : 'text-white'}`}>
                         <i className="fa-solid fa-building text-2xl w-1/4"></i>
                         <span className="text-xl">Empresas</span>  
                     </div>
-                    <div onClick={() => setScreen('vagas')} className={`flex items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange z-10 ${screen === 'vagas' ? 'text-black bg-prime-orange' : 'text-white'}`}>
+                    <div onClick={() => setScreen('vagas')} className={`flex items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange z-10 max-xl:flex-col ${screen === 'vagas' ? 'text-black bg-prime-orange' : 'text-white'}`}>
                         <i className="fa-solid fa-briefcase text-2xl w-1/4"></i>
                         <span className="text-xl">Vagas</span>  
                     </div>
