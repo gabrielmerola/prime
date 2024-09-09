@@ -94,14 +94,6 @@ export function UsuariosModule() {
                 1
             </button>
         );
-        
-        // if (totalPages > 1) {
-        //     pages.push(
-        //         <button key={2} onClick={() => setCurrentPage(2)} className={`px-2 border-[1px] border-prime-blue rounded-lg text-prime-orange ${currentPage === 2 ? "font-bold" : ""}`}>
-        //             2
-        //         </button>
-        //     );
-        // }
 
         if (currentPage > 3) {
             pages.push(<span key="first-dots">...</span>);
