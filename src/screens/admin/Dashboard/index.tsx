@@ -27,7 +27,7 @@ export function Dashboard() {
                     </div>
                     <div onClick={() => {
                         setScreen('estagiarios')
-                        setLevel(10)
+                        setLevel(0)
                     }} className={`flex items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange z-10 max-xl:flex-col ${screen === 'estagiarios' ? 'text-black bg-prime-orange' : 'text-white'}`}>
                         <i className="fa-solid fa-graduation-cap text-2xl w-1/4"></i>
                         <span className="text-xl max-lg:hidden">Estagiários</span>
@@ -35,27 +35,42 @@ export function Dashboard() {
                     {/* menu de estagiarios */}
                     <div className={`relative flex-col gap-5 ml-6 ${screen === 'estagiarios' ? 'flex max-lg:hidden' : 'hidden'}`}>
                         <div className="w-[2px] h-full bg-white absolute top-0 left-[7px]">
-                            <div className={`w-[2px] duration-300 bg-prime-orange absolute top-0 ${level == 25 ? "h-[25%]" : level == 50 ? "h-1/2" : level == 75 ? "h-[75%]" : level == 100 ? "h-[100%]" : "h-[10%]"}`}></div>
+                            <div className={`w-[2px] duration-300 bg-prime-orange absolute top-0 ${level == 0 ? "h-[0%]" : level == 25 ? "h-[25%]" : level == 50 ? "h-1/2" : level == 75 ? "h-[75%]" : level == 100 ? "h-[100%]" : "h-[10%]"}`}></div>
                         </div>
-                        <div className="flex items-center gap-2">
-                            <div className="h-4 w-4 z-10 bg-prime-orange border-2 border-prime-orange rounded-full"/>
-                            <span>Perfil Pessoal</span>
+                        <div className="flex items-center gap-2 cursor-pointer">
+                            <div className={`h-4 w-4 z-10 duration-300 border-2 ${level > 0 ? 'bg-prime-orange border-prime-orange' : 'bg-prime-blue border-white'} rounded-full`}/>
+                            <span onClick={() => {
+                                setScreen('estagiarios')
+                                setLevel(10)
+                            }}>Perfil Pessoal</span>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 cursor-pointer">
                             <div className={`h-4 w-4 z-10 duration-300 border-2 ${level >= 25 ? 'bg-prime-orange border-prime-orange' : 'bg-prime-blue border-white'} rounded-full`}/>
-                            <span>Perfil Escolar</span>
+                            <span onClick={() => {
+                                setScreen('estagiarios')
+                                setLevel(25)
+                            }}>Perfil Escolar</span>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 cursor-pointer">
                             <div className={`h-4 w-4 z-10 duration-300 border-2 ${level >= 50 ? 'bg-prime-orange border-prime-orange' : 'bg-prime-blue border-white'} rounded-full`}/>
-                            <span>Perfil do Estágio</span>
+                            <span onClick={() => {
+                                setScreen('estagiarios')
+                                setLevel(50)
+                            }}>Perfil do Estágio</span>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 cursor-pointer">
                             <div className={`h-4 w-4 z-10 duration-300 border-2 ${level >= 75 ? 'bg-prime-orange border-prime-orange' : 'bg-prime-blue border-white'} rounded-full`}/>
-                            <span>Histórico de Estágio</span>
+                            <span onClick={() => {
+                                setScreen('estagiarios')
+                                setLevel(75)
+                            }}>Histórico de Estágio</span>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 cursor-pointer">
                             <div className={`h-4 w-4 z-10 duration-300 border-2 ${level >= 100 ? 'bg-prime-orange border-prime-orange' : 'bg-prime-blue border-white'} rounded-full`}/>
-                            <span>Alterar Senha</span>
+                            <span onClick={() => {
+                                setScreen('estagiarios')
+                                setLevel(100)
+                            }}>Alterar Senha</span>
                         </div>
                     </div>
                     
