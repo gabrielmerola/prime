@@ -8,7 +8,7 @@ export function Login() {
     const [areaMobile, setAreaMobile] = useState(false)
 
     const handleClick = () => {
-        // setMoveRight(!moveRight);
+        setMoveRight(!moveRight);
     };
 
     return (
