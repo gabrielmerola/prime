@@ -8,8 +8,7 @@ export function Login() {
     const [areaMobile, setAreaMobile] = useState(false)
 
     const handleClick = () => {
-        setMoveRight(!moveRight);
-        console.log(moveRight);
+        // setMoveRight(!moveRight);
     };
 
     return (
@@ -22,9 +21,9 @@ export function Login() {
                     <div className='flex flex-col items-center gap-4 w-[50%]'>
                         <h3 className='text-xl'>Registre-se:</h3>
                         <div className='flex flex-col gap-2 w-full'>
-                            <button onClick={handleClick} className='w-full p-4 rounded-full bg-white text-prime-blue uppercase font-bold duration-200 hover:bg-prime-orange hover:text-white'>Estudante</button>
-                            <button onClick={handleClick} className='w-full p-4 rounded-full bg-white text-prime-blue uppercase font-bold duration-200 hover:bg-prime-orange hover:text-white'>Empresa</button>
-                            <button onClick={handleClick} className='w-full p-4 rounded-full bg-white text-prime-blue uppercase font-bold duration-200 hover:bg-prime-orange hover:text-white'>Instituições de Ensino</button>
+                            <Link to={"/cadastro"} className='w-full text-center p-4 rounded-full bg-white text-prime-blue uppercase font-bold duration-200 hover:bg-prime-orange hover:text-white'>Estudante</Link>
+                            <Link to={"/cadastro"} className='w-full text-center p-4 rounded-full bg-white text-prime-blue uppercase font-bold duration-200 hover:bg-prime-orange hover:text-white'>Empresa</Link>
+                            <Link to={"/cadastro"} className='w-full text-center p-4 rounded-full bg-white text-prime-blue uppercase font-bold duration-200 hover:bg-prime-orange hover:text-white'>Instituições de Ensino</Link>
                         </div>
                     </div>
                 </div>
@@ -44,7 +43,7 @@ export function Login() {
                         <span className='cursor-pointer text-prime-blue font-semibold text-lg text-center'>Esqueceu sua senha?</span>
                     </div>
                     <Link to="/admin/dashboard" className='text-center w-1/2 p-4 rounded-full bg-gradient-to-l to-[#01144b] to-[50%] from-[#1238a8] text-white uppercase font-bold duration-200 hover:brightness-150 max-md:w-full'>Entrar</Link>
-                    <p onClick={()=>setAreaMobile(true)} className='cursor-pointer text-prime-blue font-semibold md:hidden'>Não tem cadastro?</p>
+                    <Link to={"/cadastro"} className='cursor-pointer text-prime-blue font-semibold md:hidden'>Não tem cadastro?</Link>
                 </div>
                 {/* CADASTRO */}
                 <div className={`w-1/2 p-6 rounded-r-3xl max-md:w-full max-md:h-full ${areaMobile ? "" : "max-md:hidden"}`}>
