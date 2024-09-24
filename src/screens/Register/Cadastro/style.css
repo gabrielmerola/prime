@@ -1,0 +1,11 @@
+#backgroundAzul {
+    background-image: url("../../../assets/background/bg-left.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#backgroundLaranja {
+    background-image: url("../../../assets/background/bg-left-orange.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
