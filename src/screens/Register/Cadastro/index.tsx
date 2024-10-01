@@ -10,7 +10,7 @@ export function Cadastro() {
         {cargo == "estudante" ? 
             <CadastroEstudante cargo={cargo == 'estudante' ? 'estudante' : undefined} />
         : cargo == "empresa" ?
-            <CadastroEmpresa cargo={cargo} />
+            <CadastroEmpresa cargo={cargo == 'empresa' ? 'empresa' : undefined} />
         :
             <></>
         }
