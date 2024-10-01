@@ -1,19 +1,19 @@
 import './style.css'
+import { useParams } from 'react-router-dom'
+import { CadastroEstudante } from '../modules/CadastroEstudante';
+import { CadastroEmpresa } from '../modules/CadastroEmpresa';
 
 export function Cadastro() {
+    const { cargo } = useParams();
     return (
-        <main className="w-full h-screen flex items-center justify-center">
-            <section id="backgroundAzul" className="h-screen w-1/2 flex items-center justify-center text-white">
-                <img src="" alt="" />
-                <div className='uppercase font-bold text-center text-3xl'>
-                    <h1>Faça o cadastro</h1>
-                    <h1>da sua empresa</h1>
-                    <h1>de estudante</h1>
-                </div>
-            </section>
-            <section className="h-screen w-1/2">
-
-            </section>
-        </main>
+        <>
+        {cargo == "estudante" ? 
+            <CadastroEstudante cargo={cargo == 'estudante' ? 'estudante' : undefined} />
+        : cargo == "empresa" ?
+            <CadastroEmpresa cargo={cargo} />
+        :
+            <></>
+        }
+        </>
     )
 }
