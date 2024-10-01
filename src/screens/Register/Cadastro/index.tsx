@@ -8,11 +8,11 @@ export function Cadastro() {
     return (
         <>
         {cargo == "estudante" ? 
-            <CadastroEstudante cargo={cargo == 'estudante' ? 'estudante' : undefined} />
+            <CadastroEstudante cargo={'estudante'} />
         : cargo == "empresa" ?
-            <CadastroEmpresa cargo={cargo == 'empresa' ? 'empresa' : undefined} />
+            <CadastroEmpresa cargo={'empresa'} />
         :
-            <CadastroEmpresa cargo={cargo == 'empresa' ? 'empresa' : undefined} />
+            <CadastroEmpresa cargo={''} />
         }
         </>
     )
