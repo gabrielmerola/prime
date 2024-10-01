@@ -12,7 +12,7 @@ export function Cadastro() {
         : cargo == "empresa" ?
             <CadastroEmpresa cargo={cargo == 'empresa' ? 'empresa' : undefined} />
         :
-            <></>
+            <CadastroEmpresa cargo={cargo == 'empresa' ? 'empresa' : undefined} />
         }
         </>
     )
