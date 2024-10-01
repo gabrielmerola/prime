@@ -6,7 +6,7 @@ export function RegisterRoutes() {
     return (
         <Routes>
             <Route path='/login' element={<Login />} />
-            <Route path='/cadastro' element={<Cadastro />} />
+            <Route path='/cadastro/:cargo' element={<Cadastro />} />
         </Routes>
     )
 }
