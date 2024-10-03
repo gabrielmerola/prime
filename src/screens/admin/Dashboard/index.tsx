@@ -1,15 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DashboardModule } from "../modules/DashboardModule";
 import { EstagiariosModule } from "../modules/EstagiariosModule";
 import { InstituicoesModule } from "../modules/InstituicoesModule";
 import { EmpresasModule } from "../modules/EmpresasModule";
 import { VagasModule } from "../modules/VagasModule";
 import { UsuariosModule } from "../modules/UsuariosModule";
+import { decodeToken } from "../../../functions/decode";
+import { useNavigate } from "react-router-dom";
 
 export function Dashboard() {
-    const [screen, setScreen] = useState<string>('dashboard');
+    const navigate = useNavigate()
+    const [screen, setScreen] = useState<string>('');
     const [level, setLevel] = useState<number>(10);
+    const [role, setRole] = useState<string>('');
 
+    function verify() {
+        const token = localStorage.getItem('auth')
+        if(!token) {
+            localStorage.removeItem('auth')
+            navigate('/login')
+        }
+    }
+
+    useEffect(() => {
+        verify()
+        const token = localStorage.getItem('auth')
+        if(token){
+            const user = decodeToken(token)
+            setRole(user.role);
+        }
+    }, [])
     return (
         <main id="backgroundPrime" className="w-full min-h-screen p-8 flex gap-4 max-lg:flex-col">
             <nav className="w-1/6 bg-gradient-to-t z-50 to-[#01144b] to-[50%] from-[#1238a8] text-white rounded-[48px] p-4 max-lg:w-full max-lg:flex max-lg:items-center max-lg:justify-between">
@@ -17,17 +37,17 @@ export function Dashboard() {
                     <img className="w-1/2 rounded-full" src="http://via.placeholder.com/150" alt="" />
                 </div>
                 <div className="flex flex-col items-center justify-center lg:mt-16 gap-4 relative max-lg:flex-row max-lg:justify-between max-lg:w-full">
-                    <div onClick={() => setScreen('dashboard')} className={`flex items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange z-10 max-xl:flex-col ${screen === 'dashboard' ? 'text-black bg-prime-orange' : 'text-white'}`}>
+                    <div onClick={() => setScreen('dashboard')} className={`${role == 'student' ? "hidden" : 'flex'} items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange z-10 max-xl:flex-col ${screen === 'dashboard' ? 'text-black bg-prime-orange' : 'text-white'}`}>
                         <i className="fa-solid fa-home text-2xl w-1/4"></i>
                         <span className="text-xl max-lg:hidden">Dashboard</span>  
                     </div>
-                    <div onClick={() => setScreen('usuarios')} className={`flex items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange max-xl:flex-col ${screen === 'usuarios' ? 'text-black bg-prime-orange' : 'text-white'}`}>
+                    <div onClick={() => setScreen('usuarios')} className={`${role == 'student' ? "hidden" : 'flex'} items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange max-xl:flex-col ${screen === 'usuarios' ? 'text-black bg-prime-orange' : 'text-white'}`}>
                         <i className="fa-solid fa-user text-2xl w-1/4"></i>
                         <span className="text-xl max-lg:hidden">Usuários</span>  
                     </div>
                     <div onClick={() => {
                         setScreen('estagiarios')
-                        setLevel(0)
+                        setLevel(role == 'student' ? 10 : 0)
                     }} className={`flex items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange z-10 max-xl:flex-col ${screen === 'estagiarios' ? 'text-black bg-prime-orange' : 'text-white'}`}>
                         <i className="fa-solid fa-graduation-cap text-2xl w-1/4"></i>
                         <span className="text-xl max-lg:hidden">Estagiários</span>
@@ -74,11 +94,11 @@ export function Dashboard() {
                         </div>
                     </div>
                     
-                    <div onClick={() => setScreen('instituicoes')} className={`flex items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange z-10 max-xl:flex-col ${screen === 'instituicoes' ? 'text-black bg-prime-orange' : 'text-white'}`}>
+                    <div onClick={() => setScreen('instituicoes')} className={`${role == 'student' ? "hidden" : 'flex'} items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange z-10 max-xl:flex-col ${screen === 'instituicoes' ? 'text-black bg-prime-orange' : 'text-white'}`}>
                         <i className="fa-solid fa-landmark text-2xl w-1/4"></i>
                         <span className="text-xl max-lg:hidden">Instituições</span>  
                     </div>
-                    <div onClick={() => setScreen('empresas')} className={`flex items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange z-10 max-xl:flex-col ${screen === 'empresas' ? 'text-black bg-prime-orange' : 'text-white'}`}>
+                    <div onClick={() => setScreen('empresas')} className={`${role == 'student' ? "hidden" : 'flex'} items-center w-[75%] p-2 cursor-pointer duration-300 rounded-lg hover:text-black hover:bg-prime-orange z-10 max-xl:flex-col ${screen === 'empresas' ? 'text-black bg-prime-orange' : 'text-white'}`}>
                         <i className="fa-solid fa-building text-2xl w-1/4"></i>
                         <span className="text-xl max-lg:hidden">Empresas</span>  
                     </div>
