@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "axios": "^1.7.7",
+    "jwt-decode": "^4.0.0",
     "primeicons": "^7.0.0",
     "primereact": "^10.8.0",
     "react": "^18.3.1",
