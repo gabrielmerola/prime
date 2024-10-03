@@ -2,11 +2,10 @@ import { useState } from 'react'
 import imagemLaranja from '../../../assets/background/Illustration-orange.png'
 import { InputMask } from 'primereact/inputmask';
 
-export function CadastroEmpresa({ cargo } : { cargo : string | undefined }) {
+export function CadastroEmpresa({ cargo } : { cargo : string }) {
     const [parte, setParte] = useState(1);
     const [value, setValue] = useState('');
     setValue('')
-    console.log("entrei na empresa")
     return (
         <main className="w-full h-screen flex items-center justify-center">
             <section id="backgroundAzul" className={`${cargo == "empresa" ? "flex" : "hidden"} h-screen w-1/2 flex-col gap-4 items-center justify-center text-white`}>
@@ -17,7 +16,7 @@ export function CadastroEmpresa({ cargo } : { cargo : string | undefined }) {
                 </div>
             </section>
 
-            <section className={`${cargo == 'empresa' ? "" : "hidden"} h-screen w-1/2 flex flex-col gap-4 items-center justify-center p-16`}>
+            <section className={`${cargo == 'empresa' ? "flex" : "hidden"} h-screen w-1/2 flex-col gap-4 items-center justify-center p-16`}>
                 <h1 className='text-3xl text-prime-blue font-bold'>cadastro de Empresa</h1>
                 <div className='flex items-center justify-between w-full relative'>
                     <div className='absolute top-0 w-full h-full flex items-center justify-center'>
