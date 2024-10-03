@@ -1,5 +1,5 @@
 import './style.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthRepository } from '../../../api/repositories/auth_repository';
 
@@ -24,9 +24,20 @@ export function Login() {
         navigate('/dashboard')
     }
 
+    function verify() {
+        const token = localStorage.getItem('auth')
+        if(token){
+            navigate('/dashboard')
+        }
+    }
+
     const handleClick = () => {
         setMoveRight(!moveRight);
     };
+
+    useEffect(() => {
+        verify()
+    }, [])
 
     return (
         <main id='backgroundPrime' className="w-full h-screen flex items-center justify-center">
