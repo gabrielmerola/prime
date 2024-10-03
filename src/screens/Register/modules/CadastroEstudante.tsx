@@ -3,7 +3,7 @@ import imagemAzul from '../../../assets/background/Illustration-blue.png'
 export function CadastroEstudante({ cargo }: {cargo: string | undefined}) {
     return (
         <main className="w-full h-screen flex items-center justify-center">
-            <section id='backgroundLaranja' className={`${cargo == 'estudante' ? "" : "hidden"} h-screen w-1/2 flex flex-col gap-4 items-center justify-center`}>
+            <section id='backgroundLaranja' className={`${cargo == 'estudante' ? "flex" : "hidden"} h-screen w-1/2 flex-col gap-4 items-center justify-center`}>
                 <img src={imagemAzul} alt="" />
                 <div className='uppercase font-bold text-center text-3xl'>
                     <h1>Faça o cadastro</h1>

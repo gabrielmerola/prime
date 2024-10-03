@@ -8,9 +8,9 @@ export function Cadastro() {
     console.log(cargo)
     return (
         <>
-        {cargo == "estudante" ? 
+        {cargo === "estudante" ? 
             <CadastroEstudante cargo={'estudante'} />
-        : cargo == "empresa" ?
+        : cargo === "empresa" ?
             <CadastroEmpresa cargo={'empresa'} />
         :
             <CadastroEmpresa cargo={''} />
