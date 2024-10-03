@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HeaderAdmin } from "../../../components/HeaderAdmin";
+import { UsersRepository } from "../../../api/repositories/users_repository";
 
 const data = [
     { name: "João da Silva", email: "joao@gmail.com", cpf: "123.456.789-00", papel: "Administrador", sector: "TI" },
@@ -67,8 +68,10 @@ const data = [
 
 
 export function UsuariosModule() {
+    const userRepo = new UsersRepository()
     const [searchTerm, setSearchTerm] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
+    // const [data, setData] = useState([])
     const itemsPerPage = 10;
 
     const filteredData = data.filter((item) => 
@@ -128,6 +131,16 @@ export function UsuariosModule() {
 
         return pages;
     };
+
+    async function getAllUsers() {
+        const response = await userRepo.getAllUsers()
+        console.log(response.data)
+        // setData(response.data)
+    }
+
+    useEffect(() => {
+        getAllUsers()
+    }, [])
 
     return (
         <section className="w-5/6 bg-[rgba(255,255,255,0.5)] rounded-[48px] p-8 flex flex-col max-lg:w-full">
