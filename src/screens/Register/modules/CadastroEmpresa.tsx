@@ -7,7 +7,7 @@ export function CadastroEmpresa({ cargo } : { cargo : string }) {
     const [value, setValue] = useState('');
     return (
         <main className="w-full h-screen flex items-center justify-center">
-            <section id="backgroundAzul" className={`${cargo == "empresa" ? "flex" : "hidden"} h-screen w-1/2 flex-col gap-4 items-center justify-center text-white`}>
+            <section id="backgroundAzul" className={`${cargo == "empresa" ? "flex" : "hidden"} h-screen w-1/2 flex-col gap-4 items-center justify-center text-white max-md:hidden`}>
                 <img src={imagemLaranja} alt="" />
                 <div className='uppercase font-bold text-center text-3xl'>
                     <h1>Faça o cadastro</h1>
@@ -15,7 +15,7 @@ export function CadastroEmpresa({ cargo } : { cargo : string }) {
                 </div>
             </section>
 
-            <section className={`${cargo == 'empresa' ? "flex" : "hidden"} h-screen w-1/2 flex-col gap-4 items-center justify-center p-16`}>
+            <section className={`${cargo == 'empresa' ? "flex" : "hidden"} h-screen w-1/2 flex-col gap-4 items-center justify-center p-16 max-md:w-full`}>
                 <h1 className='text-3xl text-prime-blue font-bold'>cadastro de Empresa</h1>
                 <div className='flex items-center justify-between w-full relative'>
                     <div className='absolute top-0 w-full h-full flex items-center justify-center'>
