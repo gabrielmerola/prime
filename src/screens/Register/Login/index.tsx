@@ -1,11 +1,28 @@
-import { Link } from 'react-router-dom';
 import './style.css'
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthRepository } from '../../../api/repositories/auth_repository';
 
 export function Login() {
+    const navigate = useNavigate()
     const [moveRight, setMoveRight] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
-    const [areaMobile, setAreaMobile] = useState(false)
+    const [areaMobile, setAreaMobile] = useState(false);
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const authRepo = new AuthRepository();
+
+    async function login() {
+        if(email == '' || password == ''){
+            alert('Preencha todos os campos!');
+            return
+        }
+
+        const response = await authRepo.login(email, password)
+        localStorage.setItem('auth', response.token)
+        navigate('/admin/dashboard')
+    }
 
     const handleClick = () => {
         setMoveRight(!moveRight);
@@ -31,9 +48,9 @@ export function Login() {
                 <div className={`w-1/2 p-6 flex-col items-center justify-evenly max-md:w-full max-md:h-full ${areaMobile ? 'hidden' : 'flex'}`}>
                     <h1 className='font-bold uppercase text-6xl'>Login</h1>
                     <div className='flex flex-col items-center gap-4 w-[80%]'>
-                        <input className='w-full bg-gray-200 p-4 rounded-full' type="email" placeholder='E-mail' />
+                        <input onChange={(e) => setEmail(e.target.value)} className='w-full bg-gray-200 p-4 rounded-full' type="email" placeholder='E-mail' />
                         <div className='w-full bg-gray-200 rounded-full flex items-center'>
-                            <input className='bg-transparent p-4 rounded-full w-full' type={showPassword ? 'text' : 'password'} placeholder='Senha'/>
+                            <input onChange={(e) => setPassword(e.target.value)} className='bg-transparent p-4 rounded-full w-full' type={showPassword ? 'text' : 'password'} placeholder='Senha'/>
                             {showPassword ?
                                 <i onClick={()=>setShowPassword(!showPassword)} className="fa-solid fa-eye text-2xl mr-4"></i>
                             :
@@ -42,7 +59,7 @@ export function Login() {
                         </div>
                         <span className='cursor-pointer text-prime-blue font-semibold text-lg text-center'>Esqueceu sua senha?</span>
                     </div>
-                    <Link to="/admin/dashboard" className='text-center w-1/2 p-4 rounded-full bg-gradient-to-l to-[#01144b] to-[50%] from-[#1238a8] text-white uppercase font-bold duration-200 hover:brightness-150 max-md:w-full'>Entrar</Link>
+                    <button type="button" onClick={login} className='text-center w-1/2 p-4 rounded-full bg-gradient-to-l to-[#01144b] to-[50%] from-[#1238a8] text-white uppercase font-bold duration-200 hover:brightness-150 max-md:w-full'>Entrar</button>
                     <Link to={"/cadastro"} className='cursor-pointer text-prime-blue font-semibold md:hidden'>Não tem cadastro?</Link>
                 </div>
                 {/* CADASTRO */}
