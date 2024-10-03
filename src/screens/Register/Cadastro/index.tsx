@@ -5,6 +5,7 @@ import { CadastroEmpresa } from '../modules/CadastroEmpresa';
 
 export function Cadastro() {
     const { cargo } = useParams();
+    console.log(cargo)
     return (
         <>
         {cargo == "estudante" ? 
