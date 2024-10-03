@@ -21,7 +21,7 @@ export function Login() {
 
         const response = await authRepo.login(email, password)
         localStorage.setItem('auth', response.token)
-        navigate('/admin/dashboard')
+        navigate('/dashboard')
     }
 
     const handleClick = () => {
