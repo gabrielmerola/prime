@@ -79,7 +79,7 @@ export function UsuariosModule() {
         const serverPage = Math.ceil(page / localPageLimit);
         
         await userRepo.getAllUsers(serverPage).then((response) => {
-            console.log(response)
+            // console.log(response)
             setTotalData(response.total);
             setTotalPages(Math.ceil(response.total / itemsPerPage));
             setData((prevData):any => {
