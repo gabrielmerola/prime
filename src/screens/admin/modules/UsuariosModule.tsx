@@ -121,7 +121,7 @@ export function UsuariosModule() {
                     <span className="w-1/5 whitespace-nowrap">E-mail</span>
                     <span className="w-1/5 whitespace-nowrap">CPF</span>
                     <span className="w-1/5 whitespace-nowrap">Usuário</span>
-                    <span className="w-1/5 whitespace-nowrap">Setor</span>
+                    <span className="w-1/5 whitespace-nowrap">Ações</span>
                 </header>
                 {paginatedData.length > 0 ? (
                     paginatedData.map((item: any, index: any) => (
@@ -132,7 +132,12 @@ export function UsuariosModule() {
                             <span className="w-1/5 whitespace-nowrap overflow-hidden text-ellipsis">{item.email}</span>
                             <span className="w-1/5 whitespace-nowrap overflow-hidden text-ellipsis">{item.cpf}</span>
                             <span className="w-1/5 whitespace-nowrap overflow-hidden text-ellipsis">{item.role == "student" ? "Estudante" : item.role == "company" ? "Empresa" : item.role == "institution" ? "Instituição" : item.role == "admin" ? "Administrador" : item.role}</span>
-                            <span className="w-1/5 whitespace-nowrap overflow-hidden text-ellipsis">{"sem setor"}</span>
+                            <div className="w-1/5 flex gap-8 justify-start items-center">
+                                <i className="cursor-pointer duration-100 hover:text-blue-500 fa-solid fa-pencil"></i>
+                                <i className="cursor-pointer duration-100 hover:text-blue-500 fa-solid fa-print"></i>
+                                <i className="cursor-pointer duration-100 hover:text-red-500 fa-solid fa-ban"></i>
+                                <i className="cursor-pointer duration-100 hover:text-red-500 fa-solid fa-trash"></i>
+                            </div>
                         </div>
                     ))
                 ) : (
