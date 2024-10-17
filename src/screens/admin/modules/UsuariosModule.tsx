@@ -131,7 +131,7 @@ export function UsuariosModule() {
                             <span className="w-1/5 whitespace-nowrap overflow-hidden text-ellipsis">{item.name}</span>
                             <span className="w-1/5 whitespace-nowrap overflow-hidden text-ellipsis">{item.email}</span>
                             <span className="w-1/5 whitespace-nowrap overflow-hidden text-ellipsis">{item.cpf}</span>
-                            <span className="w-1/5 whitespace-nowrap overflow-hidden text-ellipsis">{item.role == "student" ? "Estudante" : item.role == "company" ? "Companhia" : item.role == "institution" ? "Instituição" : item.role == "admin" ? "Administrador" : item.role}</span>
+                            <span className="w-1/5 whitespace-nowrap overflow-hidden text-ellipsis">{item.role == "student" ? "Estudante" : item.role == "company" ? "Empresa" : item.role == "institution" ? "Instituição" : item.role == "admin" ? "Administrador" : item.role}</span>
                             <span className="w-1/5 whitespace-nowrap overflow-hidden text-ellipsis">{"sem setor"}</span>
                         </div>
                     ))
