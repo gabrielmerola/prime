@@ -12,6 +12,7 @@ export function UsuariosModule() {
     const itemsPerPage = 10;
     const localPageLimit = 4;
 
+    //REGION PAGINAÇÃO
     const filteredData = data.filter((item:any) => {
         const name = item.name ? item.name.toLowerCase() : '';
         const email = item.email ? item.email.toLowerCase() : '';
@@ -31,7 +32,6 @@ export function UsuariosModule() {
         (currentPage - 1) * itemsPerPage,
         currentPage * itemsPerPage
     );    
-
     const renderPagination = () => {
         const pages = [];
 
@@ -74,12 +74,16 @@ export function UsuariosModule() {
 
         return pages;
     };
-
-    async function getUsersByPage(page: number) {
+    async function getUsersByPage(page: number, name?: string) {
         const serverPage = Math.ceil(page / localPageLimit);
         
-        await userRepo.getAllUsers(serverPage).then((response) => {
-            // console.log(response)
+        await userRepo.getAllUsers(serverPage, name).then((response) => {
+            if(name != null && page == 1){
+                setData([])
+                setTotalPages(1)
+                setTotalData(0)
+                setCurrentPage(1)
+            }
             setTotalData(response.total);
             setTotalPages(Math.ceil(response.total / itemsPerPage));
             setData((prevData):any => {
@@ -91,11 +95,27 @@ export function UsuariosModule() {
             });
         });
     }
-    
+    //ENDREGION PAGINAÇÃO
+
+    //GERAR CURRICULO
+    async function getCurriculum(id: number){
+        await userRepo.getCurriculum(id)
+        .then(response => {
+                var blob=new Blob([response], {type:"application/pdf"});
+                var link=document.createElement('a');
+                link.href=window.URL.createObjectURL(blob);
+                link.download="curriculo.pdf";
+                link.click();
+        })
+    }
 
     useEffect(() => {
         if ((currentPage - 1) % localPageLimit === 0 || currentPage === 1) {
-            getUsersByPage(currentPage);
+            if(searchTerm!=null){
+                getUsersByPage(currentPage, searchTerm);
+            } else {
+                getUsersByPage(currentPage);
+            }
         }
     }, [currentPage]);
 
@@ -108,12 +128,12 @@ export function UsuariosModule() {
             <div className="flex items-center gap-2 my-2">
                 <input 
                     className="border-2 border-prime-blue rounded-full p-2" 
-                    placeholder="Procurar" 
+                    placeholder="Procurar"
                     type="text" 
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
-                <i className="fa-solid fa-magnifying-glass text-xl"></i>
+                <i onClick={()=>getUsersByPage(1, searchTerm)} className="fa-solid fa-magnifying-glass cursor-pointer text-xl"></i>
             </div>
             <div className="overflow-x-auto">
                 <header className="flex items-center px-4 font-bold text-prime-blue min-w-[600px]">
@@ -132,9 +152,9 @@ export function UsuariosModule() {
                             <span className="w-1/5 whitespace-nowrap overflow-hidden text-ellipsis">{item.email}</span>
                             <span className="w-1/5 whitespace-nowrap overflow-hidden text-ellipsis">{item.cpf}</span>
                             <span className="w-1/5 whitespace-nowrap overflow-hidden text-ellipsis">{item.role == "student" ? "Estudante" : item.role == "company" ? "Empresa" : item.role == "institution" ? "Instituição" : item.role == "admin" ? "Administrador" : item.role}</span>
-                            <div className="w-1/5 flex gap-8 justify-start items-center">
+                            <div className="w-1/5 flex gap-8 justify-end items-center">
                                 <i className="cursor-pointer duration-100 hover:text-blue-500 fa-solid fa-pencil"></i>
-                                <i className="cursor-pointer duration-100 hover:text-blue-500 fa-solid fa-print"></i>
+                                {item.role == "student" ? <i onClick={()=>getCurriculum(item.id)} className="cursor-pointer duration-100 hover:text-blue-500 fa-solid fa-print"></i> : ""}
                                 <i className="cursor-pointer duration-100 hover:text-red-500 fa-solid fa-ban"></i>
                                 <i className="cursor-pointer duration-100 hover:text-red-500 fa-solid fa-trash"></i>
                             </div>
